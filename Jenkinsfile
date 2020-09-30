@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage ('Delete the workspace') {
             steps {
-                sh 'sudo apt-get update'
-                sh 'sudo apt-get upgrade -y'
                 sh "sudo rm -rf $WORKSTATION/*"
             }
         }
