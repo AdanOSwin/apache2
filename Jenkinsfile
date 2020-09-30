@@ -21,9 +21,9 @@ pipeline {
                 }
             }
         }
-        stage('Third Stage') {
+        stage('Download APache cookbook') {
             steps {
-                echo "Third stage"
+                git 'https://github.com/AdanOSwin/apache2.git'
             }
         }
     }
