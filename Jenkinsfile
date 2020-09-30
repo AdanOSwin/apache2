@@ -33,7 +33,8 @@ pipeline {
         }
         stage('Run kitchen test') {
             steps {
-                sh 'sudo kitchen test'
+                sh 'sudo kitchen destroy'
+                sh 'sudo kitchen create'
             }
         }
     }
