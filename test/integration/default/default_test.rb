@@ -16,12 +16,16 @@ describe port(80), :skip do
 end
 
 describe port(80) do
+ it {should be_listening}
+end
+
+describe package('apache2') do
  it { should be_installed }
 end
 
 describe file('/var/www/html/index.html') do
- if {should exist}
- its('content') {should match(/Hello Pipeline World!/)}
+ it {should exist}
+ its('content') {should match(/Hello Pipeline World!/) }
 end
 
 describe upstart_service('apache2') do
