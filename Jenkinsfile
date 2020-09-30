@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage ('Delete the workspace') {
             steps {
-                echo "CHEF PIPELINE"
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get upgrade -y'
+                sh "sudo rm -rf $WORKSTATION/*"
             }
         }
         stage('Installing Chef Workstation') {
