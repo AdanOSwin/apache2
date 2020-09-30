@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Delete the workspace') {
             steps {
-                sh "sudo rm -rf $WORKSPACE/*"
+                echo "First Stage"
             }
         }
         stage('Installing Chef Workstation') {
