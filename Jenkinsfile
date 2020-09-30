@@ -26,5 +26,8 @@ pipeline {
                 git 'https://github.com/AdanOSwin/apache2.git'
             }
         }
+        stage('Install Kitchen Docker gem') {
+            sh 'chef gem install kitchen-docker'
+        }
     }
 }
